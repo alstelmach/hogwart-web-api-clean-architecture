@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwart.Api", "src\Hogwart.Api\Hogwart.Api.csproj", "{6827EE4E-65B7-4BB2-B732-C687AF47C2EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwart.Domain", "Hogwart.Domain\Hogwart.Domain.csproj", "{BF567A94-EF7F-447C-8F32-AADE1B9D7E0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwart.Application", "Hogwart.Application\Hogwart.Application.csproj", "{5B42BBB1-87F0-46DA-A235-8317D50D7BBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hogwart.Infrastructure", "Hogwart.Infrastructure\Hogwart.Infrastructure.csproj", "{8862EE66-5AE7-4D5F-9B86-CA923D635B48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6827EE4E-65B7-4BB2-B732-C687AF47C2EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6827EE4E-65B7-4BB2-B732-C687AF47C2EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6827EE4E-65B7-4BB2-B732-C687AF47C2EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6827EE4E-65B7-4BB2-B732-C687AF47C2EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF567A94-EF7F-447C-8F32-AADE1B9D7E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF567A94-EF7F-447C-8F32-AADE1B9D7E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF567A94-EF7F-447C-8F32-AADE1B9D7E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF567A94-EF7F-447C-8F32-AADE1B9D7E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B42BBB1-87F0-46DA-A235-8317D50D7BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B42BBB1-87F0-46DA-A235-8317D50D7BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B42BBB1-87F0-46DA-A235-8317D50D7BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B42BBB1-87F0-46DA-A235-8317D50D7BBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8862EE66-5AE7-4D5F-9B86-CA923D635B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8862EE66-5AE7-4D5F-9B86-CA923D635B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8862EE66-5AE7-4D5F-9B86-CA923D635B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8862EE66-5AE7-4D5F-9B86-CA923D635B48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
