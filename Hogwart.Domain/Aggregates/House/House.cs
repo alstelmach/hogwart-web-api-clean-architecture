@@ -26,7 +26,7 @@ public abstract class House
 
         var canAssignStudent = CanAssignStudent(student);
 
-        if (canAssignStudent)
+        if (!canAssignStudent)
         {
             throw new StudentMustNotBeAssignedDomainException(student.FullName, Name);
         }

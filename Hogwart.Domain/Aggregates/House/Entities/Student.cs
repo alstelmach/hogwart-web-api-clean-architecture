@@ -9,7 +9,7 @@ public class Student
         bool doesSpeakParseltongue,
         bool isAmbitious,
         bool doesPlayQuidditch,
-        int heightInCentimeters,
+        float heightInCentimeters,
         string nationality)
     {
         FirstName = firstName;
@@ -28,9 +28,9 @@ public class Student
     public bool DoesSpeakParseltongue { get; }
     public bool IsAmbitious { get; }
     public bool DoesPlayQuidditch { get; }
-    public int HeightInCentimeters { get; }
+    public float HeightInCentimeters { get; }
     public string Nationality { get; }
 
     public string FullName =>
-        $"{FirstName} LastName";
+        $"{FirstName} {LastName}";
 }
