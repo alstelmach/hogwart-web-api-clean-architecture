@@ -19,7 +19,7 @@ public class HouseQueryHandler : IRequestHandler<GetHouseQuery, HouseDto>
         var house = await _houseRepository.GetAsync(query.Name, cancellationToken);
         var studentDtoCollection = house
             .Students
-            .Select(student => new StudentDto(student.FullName))
+            .Select(student => new StudentDto(student.Id, student.FullName))
             .ToList();
 
         var houseDto = new HouseDto(house?.Name, studentDtoCollection);

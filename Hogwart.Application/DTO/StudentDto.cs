@@ -1,3 +1,5 @@
 ﻿namespace Hogwart.Application.DTO;
 
-public record StudentDto(string FullName);
+public record StudentDto(
+    int Id,
+    string FullName);

@@ -6,7 +6,8 @@ using MediatR;
 
 namespace Hogwart.Application.Services;
 
-public sealed class HouseCommandHandler : IRequestHandler<AssignStudentToHouseCommand>
+public sealed class HouseCommandHandler : IRequestHandler<AssignStudentToHouseCommand>,
+    IRequestHandler<MoveStudentToOtherHouseCommand>
 {
     private readonly ISortingDomainService _sortingDomainService;
     private readonly IHouseRepository _houseRepository;
@@ -24,6 +25,7 @@ public sealed class HouseCommandHandler : IRequestHandler<AssignStudentToHouseCo
         CancellationToken cancellationToken)
     {
         var student = new Student(
+            new Random().Next(int.MinValue, int.MaxValue), // Ignore this randomization for now :)
             command.FirstName,
             command.LastName,
             command.Age,
@@ -38,5 +40,24 @@ public sealed class HouseCommandHandler : IRequestHandler<AssignStudentToHouseCo
         house.AssignStudent(student);
 
         await _houseRepository.UpdateAsync(house, cancellationToken);
+    }
+
+    public async Task Handle(
+        MoveStudentToOtherHouseCommand command,
+        CancellationToken cancellationToken)
+    {
+        var houses = await _houseRepository.GetAsync(cancellationToken);
+
+        var actualHouse = houses.First(house =>
+            house.Students.Any(student =>
+                student.Id == command.StudentId));
+
+        var destinationHouse = houses.First(house => house.Name == command.DestinationHouseName);
+
+        var student = actualHouse.RemoveStudent(command.StudentId);
+        destinationHouse.AssignStudent(student);
+
+        await _houseRepository.UpdateAsync(actualHouse, cancellationToken);
+        await _houseRepository.UpdateAsync(destinationHouse, cancellationToken);
     }
 }

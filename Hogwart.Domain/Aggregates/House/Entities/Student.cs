@@ -3,6 +3,7 @@
 public class Student
 {
     public Student(
+        int id,
         string firstName, 
         string lastName,
         int age,
@@ -22,6 +23,7 @@ public class Student
         Nationality = nationality;
     }
 
+    public int Id { get; }
     public string FirstName { get; }
     public string LastName { get; }
     public int Age { get; }

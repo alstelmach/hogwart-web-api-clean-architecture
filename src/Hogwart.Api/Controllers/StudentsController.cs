@@ -1,4 +1,5 @@
-﻿using Hogwart.Application.Contracts;
+﻿using Hogwart.Api.Requests;
+using Hogwart.Application.Contracts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,23 @@ public class StudentsController : ControllerBase
 
         // This is a little violation, we've taken because we want to keep the whole reference material simple.
         // In real life we should have returned 201 instead of 204 I think.
+        return NoContent();
+    }
+
+    [HttpPatch("{studentId:int}")]
+    public async Task<IActionResult> PatchAsync(
+        [FromRoute] int studentId,
+        [FromBody] PatchStudentHouseRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        var command = new MoveStudentToOtherHouseCommand(
+            studentId,
+            request.House);
+
+        await _mediator.Send(
+            command,
+            cancellationToken);
+
         return NoContent();
     }
 }

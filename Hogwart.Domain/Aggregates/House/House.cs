@@ -17,6 +17,18 @@ public abstract class House
 
     public abstract bool CanAssignStudent(Student student);
 
+    public Student RemoveStudent(int studentId)
+    {
+        var student = _students.FirstOrDefault(student =>
+            student.Id == studentId);
+        
+        // Check other business requirements in here eg. check has student any ongoing course
+
+        _students.Remove(student);
+
+        return student;
+    }
+
     public void AssignStudent(Student student)
     {
         if (student is { Age: > 18 or < 11 })
