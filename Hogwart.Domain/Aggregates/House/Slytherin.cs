@@ -4,8 +4,8 @@ namespace Hogwart.Domain.Aggregates.House;
 
 public sealed class Slytherin : House
 {
-    public Slytherin(string name)
-        : base(name)
+    public Slytherin()
+        : base("Slytherin")
     {
     }
 

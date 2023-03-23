@@ -12,10 +12,10 @@ public sealed class HouseRepository : IHouseRepository
 {
     private static readonly List<House> Houses = new()
     {
-        new Slytherin("Slytherin"),
-        new Gryffindor("Gryffindor"),
-        new Ravenclaw("Ravenclaw"),
-        new Hufflepuff("Hufflepuff"),
+        new Slytherin(),
+        new Gryffindor(),
+        new Ravenclaw(),
+        new Hufflepuff(),
     };
 
     public Task<ICollection<House>> GetAsync(CancellationToken cancellationToken = default) =>
