@@ -25,7 +25,7 @@ public sealed class HouseCommandHandler : IRequestHandler<AssignStudentToHouseCo
         CancellationToken cancellationToken)
     {
         var student = new Student(
-            new Random().Next(int.MinValue, int.MaxValue), // Ignore this randomization for now :)
+            new Random().Next(0, int.MaxValue), // Ignore this randomization for now :)
             command.FirstName,
             command.LastName,
             command.Age,

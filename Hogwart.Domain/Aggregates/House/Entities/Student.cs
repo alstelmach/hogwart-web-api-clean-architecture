@@ -13,6 +13,7 @@ public class Student
         float heightInCentimeters,
         string nationality)
     {
+        Id = id;
         FirstName = firstName;
         LastName = lastName;
         Age = age;
