@@ -10,7 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Hogwart.Infrastructure\Hogwart.Infrastructure.csproj" />
+      <ProjectReference Include="..\Hogwart.Infrastructure\Hogwart.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
